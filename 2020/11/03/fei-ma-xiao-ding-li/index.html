@@ -487,11 +487,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h1><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>如果$$p$$是一个质数而整数$$a$$不是$$p$$的倍数则有$$a^{p-1} \ \equiv \ 1 \pmod p$$</p>
+                <h1 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h1><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>如果$p$是一个质数而整数$a$不是$p$的倍数则有$$a^{p-1} \ \equiv \ 1 \pmod p$$</p>
 <h2 id="实质"><a href="#实质" class="headerlink" title="实质"></a>实质</h2><p>欧拉定理的一个特殊情况<br>$$ a^{\phi(p)} = \ a^{p-1} \ \equiv 1 \pmod p $$</p>
 <h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p><em>[此坑待填]</em></p>
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol>
-<li><p><strong>除法中取模</strong><br> $$a^{p-1} \ \equiv \ 1 \pmod p$$  即 $$a^{p-1} \mod p =1 \mod  p = \ 1$$<br> 两边同时除以a得到$$a^{p-2} \mod p = a^{-1} \mod p$$</p>
+<li><p><strong>除法中取模</strong><br> $a^{p-1} \ \equiv \ 1 \pmod p$  即$a^{p-1} \mod p =1 \mod  p = \ 1$<br> 两边同时除以a得到$$a^{p-2} \mod p = a^{-1} \mod p$$</p>
 <p> 那么只需要在需要除以a的地方乘上左式即等价于除以a,这样的好处在于可以不断取模防止溢出</p>
 <p> 加上快速幂可以快速进行除法取模运算</p>
 <p> <em>限制:仅当模数为素数且a不为p倍数</em></p>
