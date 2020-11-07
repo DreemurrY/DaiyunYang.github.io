@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="同余定理, ydy_dreemurr的博客">
+    <meta name="keywords" content="CSP-S赛后总结, ydy_dreemurr的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>同余定理 | ydy_dreemurr的博客</title>
+    <title>CSP-S赛后总结 | ydy_dreemurr的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/%5Csource%5Cblogpic%5Czhangzhu1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">同余定理</h1>
+                    <h1 class="description center-align post-title">CSP-S赛后总结</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E8%AE%BA/">
-                                <span class="chip bg-color">数论</span>
+                            <a href="/tags/%E6%9D%82%E8%B0%88/">
+                                <span class="chip bg-color">杂谈</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">总结</span>
                             </a>
                         
                     </div>
@@ -467,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-03
+                    2020-11-07
                 </div>
                 
 
@@ -483,15 +487,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="同余定理"><a href="#同余定理" class="headerlink" title="同余定理"></a>同余定理</h1><hr>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>对于一个正整数$ m $ ，如果两个整数$ a $ , $ b $ 满足$a \equiv b$那么就称整数a与b对 $m$ 同余，记做$ a \equiv b(mod\ m) $  。对$ m $ 同余是整数的一个等价关系。</p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol>
-<li>反身性： $ a \equiv a \pmod m $</li>
-<li>对称性： 若 $ a \equiv b \pmod m $ 则 $ b \equiv a \ (mod \ m) $ </li>
-<li>传递性： 若$ a \equiv b \pmod m $ , $ b \equiv c \pmod m $$ ,则$$ a \equiv c \ (mod \ m) $ </li>
-<li>同余式相加减： 若$ a \equiv b \pmod m $ ， $ c \equiv d \pmod m$ 则$ a\ast c  \equiv c \pmod m $ </li>
-<li>同余式相乘： 若 $a \equiv b \pmod m$  ， $ c \equiv d \pmod m $ ,则[此坑待填]</li>
-</ol>
+                <h1 id="CSP-S-赛后总结"><a href="#CSP-S-赛后总结" class="headerlink" title="CSP-S 赛后总结"></a>CSP-S 赛后总结</h1><p>考试时间2:30~6:30<br>蒟蒻的题解忽略就好QAQ是等老年痴呆了以后给自己看的<br>大佬就当看个笑话吧=_=<br>=<img src="https://www.jisuanke.com/contest/15156" alt="题目地址">=(民间数据,11.16之前有效)</p>
+<h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><p>儒略历恶心到我了,刚看题干就跳了,先去看第二题,在大概4:30才回来再看.</p>
+<p>事实证明我跳题的决策是对的,第二题很简单,调一调就过了大样例</p>
+<p>T1实际上就是给儒略日让你用程序转成儒略历和格里历.我当时用的是一天一天模拟法但是没调出来,</p>
+<p>到公元后就日期错误,保守估计0~20pts</p>
+<h3 id="解法一-公式法"><a href="#解法一-公式法" class="headerlink" title="解法一 :    公式法"></a>解法一 :    公式法</h3><p>   儒略日转儒略历和格里历是有公式的.</p>
+<h3 id="解法二-暴力法-80pts"><a href="#解法二-暴力法-80pts" class="headerlink" title="解法二:     暴力法(80pts)"></a>解法二:     暴力法(80pts)</h3><p>   按年份-月份-日期的顺序类似倍增的思想暴力枚举<br>   提前判断每跳一年/每跳一月/每跳一日所跳过的儒略日(即所给r)<br>   对儒略历中公元0年特判且判断闰年时对年份先减一再判断被4整除<br>   同时可以先算出到儒略历和格里历分界点需要的儒略日,对之前和之后分别处理<br>   又因为是多组数据还可以先对输入数据从小到大排序然后一次暴力处理完,优化效果显著</p>
+<h3 id="解法三-二分法-100pts"><a href="#解法三-二分法-100pts" class="headerlink" title="解法三:     二分法(100pts)"></a>解法三:     二分法(100pts)</h3><p>   此处已鸽</p>
+<h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><p>这道题很简单,题干很长但是说白了就是让你统计一遍饲料清单再反推出能养的动物总数减去已经养<br>了的动物总数$n$</p>
+<p>显然能养的动物总数为从可取的所有位(编号可以为1的位)中随机取随机个最后的可能总数</p>
+<p>我们把这个可取的位数设为$kk$</p>
+<p>因为每一位都可以选择为1或者0即取或不取 , 每一位取或不取相互独立 , 所以由乘法原理能养的动物总数为$2^{kk}$</p>
+<p>先遍历,用一个ci数组记录下来买了的饲料的编号</p>
+<p>然后再遍历一遍用c[i]反推出养的动物「编号可以为1的位的数量」kk</p>
+<p>那么最后的答案就是$$2^{kk}-n$$</p>
+<p>这里减去n是因为求的是「能额外养的动物数量」</p>
+<p>而减去的n个动物中和编号不可取的动物交集为空因此容斥方面不会计重也就是说不会多减动物(想想为什么)</p>
+<p>我具体在程序中使用的办法是记录允许养的动物中「编号不可以为1的位」的数量,因为这个容易实现,只需要遇到一个「该位需要的饲料不存在」的判断就可以确定这一位不能取1从而让统计变量$jianqu+=1$.</p>
+<p>最后统计出「编号不可以为1的位」的数量$jianqu$,则有$kk=k-jianqu$</p>
+<p>最后的答案就是$$2^{k-jianqu}-n$$</p>
+<p>求2的kk次幂可以用位运算加速</p>
+<p>但是最后一个数据很毒瘤,即使用了ull还是会超,出题人蒸鹅心hetui</p>
+<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p>这道题没怎么看,但是要在程序中实现函数调用总觉得会很难因此在最后二十分钟输出原数组骗分了</p>
+<h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><p>这道题蛇少的情况下只需要贪心的看第一条蛇的决策 , 3条蛇的情况要么全吃要么不吃</p>
+<p>我做到这题的时候只剩下四五十分钟 , 于是匆匆忙忙骗了两个点大概20pts吧</p>
+<p>实际上蛇多的情况下还需要考虑第一条蛇吃了几条蛇之后体力到了中间但是到最后也没被吃掉的情况等 , 知乎上看到有人用回溯法做 , 但是我懒得想了</p>
+<p>所以这坑下次再填吧</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说CSP的趋势是越来越简单了,考察暴力和搜索的频率也越来越高,难道真应了那句”暴力出奇迹,打表出省一,暴搜挂着机,骗分过样例”吗</p>
+<p>个人感觉现在考察的更多是对一个问题找出最快速最划算的解决方法,而不是仅仅追求单一的某种算法,比方说T1其实如果记过公式很快就能写出来,考察的更多是对问题本身的分析和对问题本质的洞察力</p>
+<p>作为半退役选手的我,是不是应该改变刷题策略了呢……</p>
 
             </div>
             <hr/>
@@ -517,7 +542,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ydy-dreemurr-blog.vercel.app/2020/11/03/tong-yu-ding-li/">https://ydy-dreemurr-blog.vercel.app/2020/11/03/tong-yu-ding-li/</a>
+                    <a href="https://ydy-dreemurr-blog.vercel.app/2020/11/07/csp-s-sai-hou-zong-jie/">https://ydy-dreemurr-blog.vercel.app/2020/11/07/csp-s-sai-hou-zong-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -555,8 +580,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E8%AE%BA/">
-                                    <span class="chip bg-color">数论</span>
+                                <a href="/tags/%E6%9D%82%E8%B0%88/">
+                                    <span class="chip bg-color">杂谈</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">总结</span>
                                 </a>
                             
                         </div>
@@ -727,7 +756,7 @@
         repo: 'ydy-s-Blog',
         owner: 'DaiyunYang',
         admin: "DaiyunYang",
-        id: '2020-11-03T11-40-39',
+        id: '2020-11-07T21-55-10',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -751,9 +780,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/11/07/csp-s-sai-hou-zong-jie/">
                     <div class="card-image">
@@ -770,9 +800,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -785,6 +815,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -807,19 +838,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/03/fei-ma-xiao-ding-li/">
+                <a href="/2020/11/03/tong-yu-ding-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="费马小定理">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="同余定理">
                         
-                        <span class="card-title">费马小定理</span>
+                        <span class="card-title">同余定理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ——我有一个绝妙的算法,但这里地方太小了我写不下,只好写个"小"定理了
+                            ——世界上主要有两类人。第一类人有所成就，第二类人号称自己有所成就。第一类人不如第二类人那么多。
                         
                     </div>
                     <div class="publish-info">
@@ -843,10 +874,6 @@
                     
                     <a href="/tags/%E6%95%B0%E8%AE%BA/">
                         <span class="chip bg-color">数论</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">优化</span>
                     </a>
                     
                 </div>
