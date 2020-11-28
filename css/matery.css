@@ -34,13 +34,14 @@
 }
 
 body {
-    /*background-color: #7f95d1;*/
+    background-color: #7f95d1;
     margin: 0;
     color: #34495e;
-    /*overflow-x: hidden;
-    overflow-y: auto;*/
-    background: linear-gradient(60deg,rgba(255,165,150,0.5) 5%,rgba(0,228,255,0.3));
+    overflow-x: hidden;
+    overflow-y: auto;
     background-attachment: fixed;
+    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35) );/* 0% 0% / cover, url("https://x.png"), url("https://x.jpg") 0px 0px;
+*/
 }
 
 h1 {
@@ -319,7 +320,6 @@ header nav .brand-span {
 }
 
 header .brand-logo .logo-img {
-    display: none;
     height: 45px;
     vertical-align: middle;
     padding-bottom: 6px;
