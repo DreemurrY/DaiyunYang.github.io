@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSP-S赛后总结, ydy_dreemurr的博客">
+    <meta name="keywords" content="并查集, ydy_dreemurr的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CSP-S赛后总结 | ydy_dreemurr的博客</title>
+    <title>并查集 | ydy_dreemurr的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/11/07/UCIc84ZM7XfSTks.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/11/27/eTCRPhQEgAIzaYo.gif')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CSP-S赛后总结</h1>
+                    <h1 class="description center-align post-title">并查集</h1>
                 </div>
             </div>
         </div>
@@ -442,12 +442,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9D%82%E8%B0%88/">
-                                <span class="chip bg-color">杂谈</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">总结</span>
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">
+                                <span class="chip bg-color">图论</span>
                             </a>
                         
                     </div>
@@ -458,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/OI/" class="post-category">
-                                OI
+                            <a href="/categories/NOIP2020%E5%89%8D%E6%9C%80%E5%90%8E%E7%9A%84%E8%B4%9F%E9%9A%85%E9%A1%BD%E6%8A%97/" class="post-category">
+                                NOIP2020前最后的负隅顽抗
                             </a>
                         
                     </div>
@@ -471,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-07
+                    2020-11-15
                 </div>
                 
 
@@ -487,37 +483,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CSP-S-赛后总结"><a href="#CSP-S-赛后总结" class="headerlink" title="CSP-S 赛后总结"></a>CSP-S 赛后总结</h1><p>考试时间2:30~6:30<br>蒟蒻的题解忽略就好QAQ是等老年痴呆了以后给自己看的<br>大佬就当看个笑话吧=_=<br><a target="_blank" rel="noopener" href="https://www.jisuanke.com/contest/15156">题目地址</a>(民间数据,11.16之前有效)</p>
-<h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><p>儒略历恶心到我了,刚看题干就跳了,先去看第二题,在大概4:30才回来再看.</p>
-<p>事实证明我跳题的决策是对的,第二题很简单,调一调就过了大样例</p>
-<p>T1实际上就是给儒略日让你用程序转成儒略历和格里历.我当时用的是一天一天模拟法但是没调出来,</p>
-<p>到公元后就日期错误,保守估计0~20pts</p>
-<h3 id="解法一-公式法"><a href="#解法一-公式法" class="headerlink" title="解法一 :    公式法"></a>解法一 :    公式法</h3><p>   儒略日转儒略历和格里历是有公式的.</p>
-<h3 id="解法二-暴力法-80pts"><a href="#解法二-暴力法-80pts" class="headerlink" title="解法二:     暴力法(80pts)"></a>解法二:     暴力法(80pts)</h3><p>   按年份-月份-日期的顺序类似倍增的思想暴力枚举<br>   提前判断每跳一年/每跳一月/每跳一日所跳过的儒略日(即所给r)<br>   对儒略历中公元0年特判且判断闰年时对年份先减一再判断被4整除<br>   同时可以先算出到儒略历和格里历分界点需要的儒略日,对之前和之后分别处理<br>   又因为是多组数据还可以先对输入数据从小到大排序然后一次暴力处理完,优化效果显著</p>
-<h3 id="解法三-二分法-100pts"><a href="#解法三-二分法-100pts" class="headerlink" title="解法三:     二分法(100pts)"></a>解法三:     二分法(100pts)</h3><p>   此处已鸽</p>
-<h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><p>这道题很简单,题干很长但是说白了就是让你统计一遍饲料清单再反推出能养的动物总数减去已经养<br>了的动物总数$n$</p>
-<p>显然能养的动物总数为从可取的所有位(编号可以为1的位)中随机取随机个最后的可能总数</p>
-<p>我们把这个可取的位数设为$kk$</p>
-<p>因为每一位都可以选择为1或者0即取或不取 , 每一位取或不取相互独立 , 所以由乘法原理能养的动物总数为$2^{kk}$</p>
-<p>我的方法是先遍历,用一个$ci$数组(bool)(第i位表示编号为i的饲料是否在清单里)记录下来买了的饲料的编号</p>
-<p>然后再遍历一遍用$ci$反推出养的动物「编号可以为1的位的数量」$kk$</p>
-<p>那么最后的答案就是$$2^{kk}-n$$</p>
-<p>我具体在程序中使用的办法是记录允许养的动物中「编号不可以为1的位」的数量,因为这个容易实现,只需要遇到一个「该位需要的饲料不存在」的判断就可以确定这一位不能取1从而让统计变量$jianqu+=1$.</p>
-<p>最后统计出「编号不可以为1的位」的数量$jianqu$,则有$kk=k-jianqu$</p>
-<p>最后的答案就是$$2^{k-jianqu}-n$$</p>
-<p>这里减去n是因为求的是「能额外养的动物数量」</p>
-<p>而减去的n个动物中和编号不可取的动物交集为空因此容斥方面不会计重也就是说不会多减动物(想想为什么)</p>
-<p>求2的kk次幂可以用位运算加速</p>
-<p>但是最后一个数据很毒瘤,即使用了ull还是会超,出题人蒸鹅心hetui</p>
-<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p>这道题没怎么看,但是要在程序中实现函数调用总觉得会很难因此在最后二十分钟输出原数组骗分了</p>
-<h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><p>这道题蛇少的情况下只需要贪心的看第一条蛇的决策 , 3条蛇的情况要么全吃要么不吃</p>
-<p>我做到这题的时候只剩下四五十分钟 , 于是匆匆忙忙骗了两个点大概20pts吧</p>
-<p>实际上蛇多的情况下还需要考虑第一条蛇吃了几条蛇之后体力到了中间但是到最后也没被吃掉的情况等 , 知乎上看到有人用回溯法做 , 但是我懒得想了</p>
-<p>所以这坑下次再填吧</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>总的来说CSP的趋势是越来越简单了,考察暴力和搜索的频率也越来越高,难道真应了那句”暴力出奇迹,打表出省一,暴搜挂着机,骗分过样例”吗</strong></p>
-<p><strong>个人感觉现在考察的更多是对一个问题找出最快速最划算的解决方法,而不是仅仅追求单一的某种算法,比方说T1其实如果记过公式很快就能写出来,考察的更多是对问题本身的分析和对问题本质的洞察力</strong></p>
-<p><strong>作为半退役选手的我,是不是应该改变刷题策略了呢……</strong></p>
+                <h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p> 并查集是一种可以<strong>动态维护若干个不重叠的集合</strong>,并支持<strong>合并与查询</strong>的数据结构。<strong>它擅长动态维护许多具有传递性的关系</strong>。</p>
+<p> 一般使用树形结构存储,一般使用递归建树,这里讨论的也是树形的并查集。</p>
+<p>在并查集中,我们使用”代表元”法,即为每个集合选定一个固定的元素作为整个集合的代表同时也是整棵树的树根,好写而巧妙。</p>
+<h2 id="二-基本操作"><a href="#二-基本操作" class="headerlink" title="二.基本操作"></a>二.基本操作</h2><h3 id="0-Init-建树与初始化-开数组并初始化"><a href="#0-Init-建树与初始化-开数组并初始化" class="headerlink" title="0.$Init$ , 建树与初始化(开数组并初始化)"></a>0.$Init$ , 建树与初始化(开数组并初始化)</h3><h3 id="1-Get-查询一个元素属于哪一个集合-或者说树"><a href="#1-Get-查询一个元素属于哪一个集合-或者说树" class="headerlink" title="1.$Get$ , 查询一个元素属于哪一个集合(或者说树)"></a>1.$Get$ , 查询一个元素属于哪一个集合(或者说树)</h3><p>   从并查集树中该元素的位置不断往上查找找到根节点,该根节点则为并查集的代表元素即可知道该元素所属集合</p>
+<h3 id="2-Merge-把两个集合合并成一个大集合-或者说树"><a href="#2-Merge-把两个集合合并成一个大集合-或者说树" class="headerlink" title="2.$Merge$ , 把两个集合合并成一个大集合(或者说树)"></a>2.$Merge$ , 把两个集合合并成一个大集合(或者说树)</h3><p>   首先找到第一个集合的最终祖先 , 将它指向第二个集合的根节点从而达到合并两个集合的目的</p>
+<h2 id="三-优化操作"><a href="#三-优化操作" class="headerlink" title="三.优化操作"></a>三.优化操作</h2><p>注意到如果单纯建树每次查询需要沿着树干一直找到树根效率较低,最慢的时候即当树退化成一条链时单次查询</p>
+<p>甚至需要$O(n)$的复杂度,因此我们可以对并查集进行优化</p>
+<h3 id="1-路径压缩——-Get-时的优化技巧"><a href="#1-路径压缩——-Get-时的优化技巧" class="headerlink" title="1.路径压缩——$Get$时的优化技巧"></a>1.路径压缩——$Get$时的优化技巧</h3><p>  在一些题目中,我们<strong>只关心每个集合对应树的根节点是多少,并不关心这棵树的形态</strong> , 因此可以在</p>
+<p>每次执行Get操作的同时把访问过的每个节点(也就是所查询元素的全部祖先)都直接指向树根,即</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree[x] = get(tree[x]);</span><br></pre></td></tr></table></figure>
 
+<p>也可以和返回值合并起来如</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x == tree[x]) <span class="keyword">return</span> x;</span><br><span class="line"><span class="keyword">return</span> tree[x] = get(tree[x]);</span><br></pre></td></tr></table></figure>
+
+<p>  这种方法优化后的并查集每次$Get$操作的<em>均摊复杂度</em>为$O(logN)$</p>
+<h3 id="2-按秩合并——-Merge-时的优化技巧"><a href="#2-按秩合并——-Merge-时的优化技巧" class="headerlink" title="2.按秩合并——$Merge$时的优化技巧"></a>2.按秩合并——$Merge$时的优化技巧</h3><p>  在一些题目中由于可能对父节点有记录的需求因此无法使用路径压缩,这时我们可以使用按秩合并</p>
+<p>,按秩合并的实际意义其实是<strong>将树的形态变得更均衡</strong>。其思路为<strong>为每个并查集设定一个”秩”作为树大</strong></p>
+<p><strong>小的代表存储在根节点上</strong>,这个”秩”可以是并查集未路径压缩前树的深度也可以是树的大小。在每次合</p>
+<p>并两个并查集时候<strong>通过”秩”来判断两棵树的大小并将小的合并到大的里面</strong>。(<em>一般用一个数组存秩</em>)</p>
+<h4 id="需要改动的地方"><a href="#需要改动的地方" class="headerlink" title="需要改动的地方"></a>需要改动的地方</h4><ul>
+<li>定义一个rank[]数组存储秩</li>
+<li>初始化时需要初始化每个并查集秩为0</li>
+<li>合并并查集之前先比较秩大小,合并的时候将秩小的合并到大的里面(即把秩小的的根节点指向秩大的根节点)</li>
+</ul>
+<h3 id="3-我-全-都-要——码力极佳不嫌麻烦の大佬的选择"><a href="#3-我-全-都-要——码力极佳不嫌麻烦の大佬的选择" class="headerlink" title="3.我 全 都 要——码力极佳不嫌麻烦の大佬的选择"></a>3.<strong>我 全 都 要</strong>——码力极佳不嫌麻烦の大佬的选择</h3><p>  同时使用路径压缩和按秩合并时的复杂度可低到$O(\alpha(N))$</p>
+<p>其中$\alpha(N)$为反阿克曼函数,值得一提的是它比对数函数$\log N$的增长速度还要慢,可以视为常数复杂度</p>
+<p>因此大部分情况下其实只用路径压缩省事也够用但是特殊情况还是需要用按秩合并因此还是学会比较好=-=</p>
+<h2 id="四-模板代码"><a href="#四-模板代码" class="headerlink" title="四.模板代码"></a>四.模板代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*全局定义内容*/</span></span><br><span class="line"><span class="keyword">int</span> tree[N];<span class="comment">//存并查集</span></span><br><span class="line"><span class="keyword">int</span> rank[N];<span class="comment">//按秩合并特供</span></span><br><span class="line"><span class="comment">/*函数定义内容*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Get*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="comment">//查询x(递归+三元运算符做法)</span></span><br><span class="line">	<span class="comment">/*二选一*/</span></span><br><span class="line">	<span class="keyword">return</span> tree[x] == x ? x : tree[x]=get(tree[x]);<span class="comment">//路径压缩</span></span><br><span class="line">	<span class="keyword">return</span> tree[x] == x ? x : get(tree[x]);<span class="comment">//非路径压缩</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Merge*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;<span class="comment">//无按秩合并版</span></span><br><span class="line">	tree[get(x)] = get(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;<span class="comment">//按秩合并</span></span><br><span class="line">	<span class="keyword">if</span>(rank[x]&gt;rank[y])&#123;</span><br><span class="line">	<span class="comment">/*若y小则将y合并到x*/</span></span><br><span class="line">        tree[y] = x;</span><br><span class="line">        rank[x] += rank[y];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">/*若x小则将x合并到y*/</span></span><br><span class="line">        tree[x] = y;</span><br><span class="line">        rank[y] += rank[x];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*main函数内内容*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++ )&#123;<span class="comment">//初始化</span></span><br><span class="line">	tree[i] = i;</span><br><span class="line">	rank[i] = <span class="number">0</span>;<span class="comment">//按秩合并特供</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="小盆友萌学废了么-学废了就一起来划水继续学习叭"><a href="#小盆友萌学废了么-学废了就一起来划水继续学习叭" class="headerlink" title="小盆友萌学废了么?学废了就一起来划水继续学习叭"></a>小盆友萌学废了么?学废了就一起来<del>划水</del>继续学习叭</h1>
             </div>
             <hr/>
 
@@ -542,7 +537,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ydy-dreemurr-blog.vercel.app/2020/11/07/csp-s-sai-hou-zong-jie/">https://ydy-dreemurr-blog.vercel.app/2020/11/07/csp-s-sai-hou-zong-jie/</a>
+                    <a href="https://ydy-dreemurr-blog.vercel.app/2020/11/15/bing-cha-ji/">https://ydy-dreemurr-blog.vercel.app/2020/11/15/bing-cha-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -580,12 +575,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9D%82%E8%B0%88/">
-                                    <span class="chip bg-color">杂谈</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">总结</span>
+                                <a href="/tags/%E5%9B%BE%E8%AE%BA/">
+                                    <span class="chip bg-color">图论</span>
                                 </a>
                             
                         </div>
@@ -756,7 +747,7 @@
         repo: 'ydy-s-Blog',
         owner: 'DaiyunYang',
         admin: "DaiyunYang",
-        id: '2020-11-07T21-55-10',
+        id: '2020-11-15T16-33-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -780,9 +771,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/11/15/bing-cha-ji/">
                     <div class="card-image">
@@ -799,9 +791,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -814,6 +806,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -832,24 +825,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/03/tong-yu-ding-li/">
+                <a href="/2020/11/07/csp-s-sai-hou-zong-jie/">
                     <div class="card-image">
                         
+                        <img src="https://i.loli.net/2020/11/07/UCIc84ZM7XfSTks.jpg" class="responsive-img" alt="CSP-S赛后总结">
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="同余定理">
-                        
-                        <span class="card-title">同余定理</span>
+                        <span class="card-title">CSP-S赛后总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ——世界上主要有两类人。第一类人有所成就，第二类人号称自己有所成就。第一类人不如第二类人那么多。
+                            ——希望是附丽于存在的，有存在，便有希望，有希望，便是光明。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
                             </span>
                         <span class="publish-author">
                             
@@ -866,8 +858,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E8%AE%BA/">
-                        <span class="chip bg-color">数论</span>
+                    <a href="/tags/%E6%9D%82%E8%B0%88/">
+                        <span class="chip bg-color">杂谈</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">总结</span>
                     </a>
                     
                 </div>
@@ -1042,13 +1038,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
