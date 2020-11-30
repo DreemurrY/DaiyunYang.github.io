@@ -536,7 +536,7 @@
 <span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//无按秩合并版</span>
     tree<span class="token punctuation">[</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">get</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token function">merge_</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//按秩合并</span>
+<span class="token keyword">void</span> <span class="token function">merge_</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//按秩合并(秩视作树的大小)</span>
     x<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>y<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先全换成根节点</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">></span>rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*若y小则将y合并到x*/</span>
@@ -550,6 +550,19 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
+<span class="token keyword">void</span> <span class="token function">merge__</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//按秩合并(秩视作树的深度)</span>
+    x<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>y<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先全换成根节点</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">></span>rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/*若y小则将y合并到x*/</span>
+        tree<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//深度肯定不会超过rank[x]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/*若x小则将x合并到y*/</span>
+        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> y<span class="token punctuation">;</span>
+        rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//相等的情况会变多一层</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/*main函数内内容*/</span>
 
@@ -557,7 +570,7 @@
     tree<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
     rank<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按秩合并特供</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="小盆友萌学废了么-学废了就一起来划水继续学习叭"><a href="#小盆友萌学废了么-学废了就一起来划水继续学习叭" class="headerlink" title="小盆友萌学废了么?学废了就一起来划水继续学习叭"></a>小盆友萌学废了么?学废了就一起来<del>划水</del>继续学习叭</h1>
             </div>
             <hr/>
