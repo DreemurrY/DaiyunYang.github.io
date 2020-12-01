@@ -214,7 +214,7 @@ pre[class*="language-"] {
 code[class*="language-"],
 pre[class*="language-"] {
     color: #e8eaf6;
-    white-space: pre-wrap !important;
+    white-space: pre-line !important;
 }
 
 /* 键盘 kbd 标签样式 */
@@ -1919,7 +1919,7 @@ footer .copy-right {
     background-color: #f2f2f2;
     color: #e96900;
     font-style: normal;
-    white-space: pre-wrap;
+    white-space: pre-line;
 }
 
 /*回到顶部按钮样式*/
