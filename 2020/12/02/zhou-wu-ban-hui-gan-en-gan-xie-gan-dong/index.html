@@ -7,7 +7,7 @@
 <head>
     
     <meta charset="utf-8">
-    <meta name="keywords" content="并查集, ydy_dreemurr的博客">
+    <meta name="keywords" content="班会-不得不参与的活动, ydy_dreemurr的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>并查集 | ydy_dreemurr的博客</title>
+    <title>班会-不得不参与的活动 | ydy_dreemurr的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -324,12 +324,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1675046534,2340748983&fm=26&gp=0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">并查集</h1>
+                    <h1 class="description center-align post-title">班会-不得不参与的活动</h1>
                 </div>
             </div>
         </div>
@@ -446,27 +446,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                <span class="chip bg-color">数据结构</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">
-                                <span class="chip bg-color">图论</span>
+                            <a href="/tags/%E8%BF%87%E5%9C%BA/">
+                                <span class="chip bg-color">过场</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/NOIP2020%E5%89%8D%E6%9C%80%E5%90%8E%E7%9A%84%E8%B4%9F%E9%9A%85%E9%A1%BD%E6%8A%97/" class="post-category">
-                                NOIP2020前最后的负隅顽抗
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -475,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-15
+                    2020-12-02
                 </div>
                 
 
@@ -491,87 +478,37 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p> 并查集是一种可以<strong>动态维护若干个不重叠的集合</strong>,并支持<strong>合并与查询</strong>的数据结构。<strong>它擅长动态维护许多具有传递性的关系</strong>。</p>
-<p> 一般使用树形结构存储,一般使用递归建树,这里讨论的也是树形的并查集。</p>
-<p>在并查集中,我们使用”代表元”法,即为每个集合选定一个固定的元素作为整个集合的代表同时也是整棵树的树根,好写而巧妙。</p>
-<h2 id="二-基本操作"><a href="#二-基本操作" class="headerlink" title="二.基本操作"></a>二.基本操作</h2><h3 id="0-Init-建树与初始化-开数组并初始化"><a href="#0-Init-建树与初始化-开数组并初始化" class="headerlink" title="0.$Init$ , 建树与初始化(开数组并初始化)"></a>0.$Init$ , 建树与初始化(开数组并初始化)</h3><h3 id="1-Get-查询一个元素属于哪一个集合-或者说树"><a href="#1-Get-查询一个元素属于哪一个集合-或者说树" class="headerlink" title="1.$Get$ , 查询一个元素属于哪一个集合(或者说树)"></a>1.$Get$ , 查询一个元素属于哪一个集合(或者说树)</h3><p>   从并查集树中该元素的位置不断往上查找找到根节点,该根节点则为并查集的代表元素即可知道该元素所属集合</p>
-<h3 id="2-Merge-把两个集合合并成一个大集合-或者说树"><a href="#2-Merge-把两个集合合并成一个大集合-或者说树" class="headerlink" title="2.$Merge$ , 把两个集合合并成一个大集合(或者说树)"></a>2.$Merge$ , 把两个集合合并成一个大集合(或者说树)</h3><p>   首先找到第一个集合的最终祖先 , 将它指向第二个集合的根节点从而达到合并两个集合的目的</p>
-<h2 id="三-优化操作"><a href="#三-优化操作" class="headerlink" title="三.优化操作"></a>三.优化操作</h2><p>注意到如果单纯建树每次查询需要沿着树干一直找到树根效率较低,最慢的时候即当树退化成一条链时单次查询</p>
-<p>甚至需要$O(n)$的复杂度,因此我们可以对并查集进行优化</p>
-<h3 id="1-路径压缩——-Get-时的优化技巧"><a href="#1-路径压缩——-Get-时的优化技巧" class="headerlink" title="1.路径压缩——$Get$时的优化技巧"></a>1.路径压缩——$Get$时的优化技巧</h3><p>  在一些题目中,我们<strong>只关心每个集合对应树的根节点是多少,并不关心这棵树的形态</strong> , 因此可以在</p>
-<p>每次执行Get操作的同时把访问过的每个节点(也就是所查询元素的全部祖先)都直接指向树根,即</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">get</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>也可以和返回值合并起来如</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> x<span class="token punctuation">;</span>
-<span class="token keyword">return</span> tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">get</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>  这种方法优化后的并查集每次$Get$操作的<em>均摊复杂度</em>为$O(logN)$</p>
-<h3 id="2-按秩合并——-Merge-时的优化技巧"><a href="#2-按秩合并——-Merge-时的优化技巧" class="headerlink" title="2.按秩合并——$Merge$时的优化技巧"></a>2.按秩合并——$Merge$时的优化技巧</h3><p>  在一些题目中由于可能对父节点有记录的需求因此无法使用路径压缩,这时我们可以使用按秩合并</p>
-<p>,按秩合并的实际意义其实是<strong>将树的形态变得更均衡</strong>。其思路为<strong>为每个并查集设定一个”秩”作为树大</strong></p>
-<p><strong>小的代表存储在根节点上</strong>,这个”秩”可以是并查集未路径压缩前树的深度也可以是树的大小。在每次合</p>
-<p>并两个并查集时候<strong>通过”秩”来判断两棵树的大小并将小的合并到大的里面</strong>。(<em>一般用一个数组存秩</em>)</p>
-<h4 id="需要改动的地方"><a href="#需要改动的地方" class="headerlink" title="需要改动的地方"></a>需要改动的地方</h4><ul>
-<li>定义一个rank[]数组存储秩</li>
-<li>初始化时需要初始化每个并查集秩为0</li>
-<li>合并并查集之前先比较秩大小,合并的时候将秩小的合并到大的里面(即把秩小的的根节点指向秩大的根节点)</li>
+                <h1 id="周五班会”感恩感谢感动”"><a href="#周五班会”感恩感谢感动”" class="headerlink" title="周五班会”感恩感谢感动”"></a>周五班会”感恩感谢感动”</h1><h2 id="一-小游戏-10min"><a href="#一-小游戏-10min" class="headerlink" title="一.小游戏(10min)"></a>一.小游戏(10min)</h2><ul>
+<li><p>密码游戏</p>
+</li>
+<li><p>一共两到三轮</p>
+</li>
+<li><p>准备三到四个密码</p>
+</li>
+<li><p>ppt上放规则</p>
+</li>
+<li><p>可以整一些密码与学科相关</p>
+<h2 id="二-感恩老师-20min"><a href="#二-感恩老师-20min" class="headerlink" title="二.感恩老师(20min)"></a>二.感恩老师(20min)</h2></li>
+<li><p>串词(2min)</p>
+</li>
+<li><p>老师电影剪辑(10min)</p>
+</li>
+<li><p>串词(2min)</p>
+<h2 id="三-感谢母校-10min"><a href="#三-感谢母校-10min" class="headerlink" title="三.感谢母校(10min)"></a>三.感谢母校(10min)</h2></li>
+<li><p>串词(2min)</p>
+</li>
+<li><p>视频(1min2s)</p>
+</li>
+<li><p>串词(2min)</p>
+</li>
 </ul>
-<h3 id="3-我-全-都-要——码力极佳不嫌麻烦の大佬的选择"><a href="#3-我-全-都-要——码力极佳不嫌麻烦の大佬的选择" class="headerlink" title="3.我 全 都 要——码力极佳不嫌麻烦の大佬的选择"></a>3.<strong>我 全 都 要</strong>——码力极佳不嫌麻烦の大佬的选择</h3><p>  同时使用路径压缩和按秩合并时的复杂度可低到$O(\alpha(N))$</p>
-<p>其中$\alpha(N)$为反阿克曼函数,值得一提的是它比对数函数$\log N$的增长速度还要慢,可以视为常数复杂度</p>
-<p>因此大部分情况下其实只用路径压缩省事也够用但是特殊情况还是需要用按秩合并因此还是学会比较好=-=</p>
-<h2 id="四-模板代码"><a href="#四-模板代码" class="headerlink" title="四.模板代码"></a>四.模板代码</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*全局变量定义内容*/</span>
+<h2 id="四-感动自己-5min"><a href="#四-感动自己-5min" class="headerlink" title="四.感动自己(5min)"></a>四.感动自己(5min)</h2><ul>
+<li><p>串词</p>
+</li>
+<li><p>同学问答=_=(3min)</p>
+</li>
+</ul>
 
-<span class="token keyword">int</span> tree<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//存并查集</span>
-<span class="token keyword">int</span> rank<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按秩合并特供</span>
-
-<span class="token comment" spellcheck="true">/*函数定义内容*/</span>
-
-<span class="token comment" spellcheck="true">/*Get*/</span>
-<span class="token keyword">int</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//查询x(递归+三元运算符做法)</span>
-    <span class="token comment" spellcheck="true">/*二选一*/</span>
-    <span class="token keyword">return</span> tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">==</span> x <span class="token operator">?</span> x <span class="token operator">:</span> tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//路径压缩</span>
-    <span class="token keyword">return</span> tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">==</span> x <span class="token operator">?</span> x <span class="token operator">:</span> <span class="token function">get</span><span class="token punctuation">(</span>tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//非路径压缩</span>
-<span class="token punctuation">}</span>
-
-
-<span class="token comment" spellcheck="true">/*Merge*/</span>
-<span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//无按秩合并版</span>
-    tree<span class="token punctuation">[</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">get</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token function">merge_</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//按秩合并(秩视作树的大小)</span>
-    x<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>y<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先全换成根节点</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">></span>rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/*若y小则将y合并到x*/</span>
-        tree<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
-        rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/*若x小则将x合并到y*/</span>
-        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> y<span class="token punctuation">;</span>
-        rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">void</span> <span class="token function">merge__</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//按秩合并(秩视作树的深度)</span>
-    x<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>y<span class="token operator">=</span><span class="token function">get</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先全换成根节点</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">></span>rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/*若y小则将y合并到x*/</span>
-        tree<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//深度肯定不会超过rank[x]</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/*若x小则将x合并到y*/</span>
-        tree<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> y<span class="token punctuation">;</span>
-        rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>rank<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//相等的情况会变多一层</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true">/*main函数内内容*/</span>
-
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//初始化</span>
-    tree<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
-    rank<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//按秩合并特供</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="小盆友萌学废了么-学废了就一起来划水继续学习叭"><a href="#小盆友萌学废了么-学废了就一起来划水继续学习叭" class="headerlink" title="小盆友萌学废了么?学废了就一起来划水继续学习叭"></a>小盆友萌学废了么?学废了就一起来<del>划水</del>继续学习叭</h1>
             </div>
             <hr/>
 
@@ -596,7 +533,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ydy-dreemurr-blog.vercel.app/2020/11/15/bing-cha-ji/">https://ydy-dreemurr-blog.vercel.app/2020/11/15/bing-cha-ji/</a>
+                    <a href="https://ydy-dreemurr-blog.vercel.app/2020/12/02/zhou-wu-ban-hui-gan-en-gan-xie-gan-dong/">https://ydy-dreemurr-blog.vercel.app/2020/12/02/zhou-wu-ban-hui-gan-en-gan-xie-gan-dong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -634,12 +571,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                    <span class="chip bg-color">数据结构</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9B%BE%E8%AE%BA/">
-                                    <span class="chip bg-color">图论</span>
+                                <a href="/tags/%E8%BF%87%E5%9C%BA/">
+                                    <span class="chip bg-color">过场</span>
                                 </a>
                             
                         </div>
@@ -811,7 +744,7 @@
         repo: 'ydy-s-Blog',
         owner: 'DaiyunYang',
         admin: "DaiyunYang",
-        id: '2020-11-15T16-33-55',
+        id: '2020-12-02T01-20-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -835,9 +768,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/12/02/zhou-wu-ban-hui-gan-en-gan-xie-gan-dong/">
                     <div class="card-image">
@@ -855,9 +789,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -866,6 +800,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -884,30 +819,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/07/csp-s-sai-hou-zong-jie/">
+                <a href="/2020/11/15/bing-cha-ji/">
                     <div class="card-image">
                         
-                        <img src="/medias/blogpic/zhangzhu1.jpg" class="responsive-img" alt="CSP-S赛后总结">
+                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1675046534,2340748983&fm=26&gp=0.jpg" class="responsive-img" alt="并查集">
                         
-                        <span class="card-title">CSP-S赛后总结</span>
+                        <span class="card-title">并查集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ——希望是附丽于存在的，有存在，便有希望，有希望，便是光明。
+                            简单而有效的数据结构
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/OI/" class="post-category">
-                                    OI
+                            <a href="/categories/NOIP2020%E5%89%8D%E6%9C%80%E5%90%8E%E7%9A%84%E8%B4%9F%E9%9A%85%E9%A1%BD%E6%8A%97/" class="post-category">
+                                    NOIP2020前最后的负隅顽抗
                                 </a>
                             
                             
@@ -917,12 +852,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">总结</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
-                    <a href="/tags/%E6%9D%82%E8%B0%88/">
-                        <span class="chip bg-color">杂谈</span>
+                    <a href="/tags/%E5%9B%BE%E8%AE%BA/">
+                        <span class="chip bg-color">图论</span>
                     </a>
                     
                 </div>
